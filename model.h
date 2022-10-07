@@ -4,6 +4,7 @@
 #include <QMap>
 #include <QString>
 #include <QVariant>
+#include <iostream>
 
 class Model
 {

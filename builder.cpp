@@ -4,7 +4,7 @@
 #include <QSqlError>
 #include <QSqlRecord>
 #include <QTime>
-#include <QTimer>
+#include <QElapsedTimer>
 #include "db.h"
 
 Builder::Builder(const QString &table) :
@@ -154,7 +154,7 @@ Builder::Query::Query(const QString &statement) :
     QSqlQuery(),
     succeeded(false)
 {
-    QTime t;
+    QElapsedTimer t;
     t.start();
     if ((succeeded = exec(statement)) == false) {
         DB::setErrorMessage(lastError().text());

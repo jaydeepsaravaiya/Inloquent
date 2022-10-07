@@ -1,4 +1,3 @@
-#include <bits/stdc++.h>
 #include "model.h"
 #include "db.h"
 
@@ -12,7 +11,7 @@ class User : public Model
 int main(int, char *[])
 {
     if (DB::initialize("QMYSQL", "localhost", 3306, "test", "root", "secret") == false)
-        cout << DB::lastErrorMessage().toStdString() << endl;
+        std::cout << DB::lastErrorMessage().toStdString() << std::endl;
 
     bool ok = DB::createIfNotExists("users", [](BluePrint *table){
         table->increment("id");
